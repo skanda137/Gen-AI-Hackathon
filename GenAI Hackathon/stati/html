@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend with Python Backend</title>
+</head>
+<body>
+    <h1>Frontend integrated with Python!</h1>
+    <button onclick="fetchMessage()">Fetch Message from Backend</button>
+    <div id="display"></div>
+    <script>
+        function fetchMessage() {
+            fetch('/api/message')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('display').textContent = data.message;
+                });
+        }
+    </script>
+</body>
+</html>
